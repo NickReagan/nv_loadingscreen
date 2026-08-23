@@ -367,6 +367,41 @@ video {
   z-index: -1;
 }
 
+.music-credit {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  margin: 1vw;
+  display: flex;
+  align-items: center;
+  gap: 0.35vw;
+  font-size: 0.75vw;
+  color: #dbdbdb;
+  text-shadow: 0px 0px 0.5vw #000;
+  opacity: 0.8;
+  transition: 0.3s;
+}
+
+.music-credit:hover {
+  opacity: 1;
+}
+
+.music-credit i {
+  color: rgba(var(--main), 1);
+  font-size: 0.8vw;
+}
+
+.music-credit .name {
+  color: rgba(var(--main), 1);
+  font-weight: 700;
+  text-decoration: none;
+  transition: 0.2s;
+}
+
+.music-credit .name:hover {
+  text-shadow: 0px 0px 1vw rgba(var(--main), 0.8);
+}
+
 .mini-buttons {
   position: absolute;
   left: 0;

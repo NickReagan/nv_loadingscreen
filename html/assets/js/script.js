@@ -31,9 +31,9 @@ function loading(num){
 	$(".loading-bar .line").width(num + "%");
 }
 
-if (showStaffTeam){
-	$(".panel.staffteam").show()
-	staff_team.forEach(function(user){
+function render_staff(list){
+	$(".staff_team").empty()
+	list.forEach(function(user){
 		$(".staff_team").append(`
 			<div class="staff">
 				<div class="info">
@@ -46,6 +46,13 @@ if (showStaffTeam){
 	})
 }
 
+if (showStaffTeam){
+	$(".panel.staffteam").show()
+	// The hardcoded fallback. If the website roster is enabled and reachable,
+	// client.lua replaces this with the live list a moment later.
+	render_staff(staff_team)
+}
+
 if (showTipList){
 	$(".panel.panelInfo").show()
 }
@@ -54,6 +61,11 @@ window.addEventListener('message', function(e) {
     if(e.data.eventName === 'loadProgress') {
     	var num = (e.data.loadFraction * 100).toFixed(0)
         loading(num);
+    }
+    if(e.data.eventName === 'setStaff') {
+    	if (showStaffTeam && Array.isArray(e.data.staff) && e.data.staff.length) {
+    		render_staff(e.data.staff)
+    	}
     }
 });
 
@@ -67,9 +79,22 @@ platforms.forEach(platform => {
 	}
 });
 
+// Music credit
+if (typeof musicCreditName !== "undefined" && musicCreditName != "") {
+	$(".music-credit .text").html(musicCreditText)
+	$(".music-credit .name").html(musicCreditName)
+	if (typeof musicCreditLink !== "undefined" && musicCreditLink != "") {
+		$(".music-credit .name").attr("href", musicCreditLink)
+	} else {
+		$(".music-credit .name").removeAttr("href")
+	}
+	$(".music-credit").css("display", "flex")
+}
+
 $("a").on("click",function(e){
 	e.preventDefault()
-	window.invokeNative('openUrl', e.target.href)
+	const url = $(e.currentTarget).attr("href")
+	if (url && url != "/") window.invokeNative('openUrl', url)
 })
 
 if (theme == "orange"){

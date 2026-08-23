@@ -6,17 +6,27 @@
 /* If you have any problems you can contact us via discord. <3     */
 
 
+// FALLBACK staff list.
+// With Config.UseWebsiteRoster = true (config.lua) the live roster from
+// firp_website replaces this a moment after the loading screen appears. This
+// list is what players see if the website is down, firp_website is not started,
+// or the roster is turned off — so it is worth keeping roughly current.
 var staff_team = [
 
 	{
-		"name":"Nevera Owner",
-		"image":"https://forum.cfx.re/user_avatar/forum.cfx.re/neveradevelopment/144/4447132_2.png",
+		"name":"Nick Reagan",
+		"image":"https://forum.cfx.re/user_avatar/forum.cfx.re/nickreagan/144/3658060_2.png",
 		"rank":"Owner"
 	},
 	{
-		"name":"Nevera Admin",
-		"image":"https://forum.cfx.re/user_avatar/forum.cfx.re/neveradevelopment/144/4447132_2.png",
-		"rank":"Admin"
+		"name":"Finn Orion",
+		"image":"https://r2.fivemanage.com/7UKKaqWubHwrVe71HHqee/finn-pfp.jpg",
+		"rank":"Owner"
+	},
+	{
+		"name":"Pie",
+		"image":"https://r2.fivemanage.com/7UKKaqWubHwrVe71HHqee/pie-pfp.jpg",
+		"rank":"Executive Director"
 	}
 
 ]
@@ -66,7 +76,7 @@ const showTipList = true
 // green
 // pink
 // purple
-const theme = "orange"
+const theme = "blue"
 
 // ==== WINTER UPDATE !! ==== \\
 const enableWinterUpdate = false
@@ -74,13 +84,13 @@ const enableWinterUpdate = false
 
 
 // Text settings
-const name = "<strong>NEV</strong>ERA"
+const name = "<strong>FREE</strong>ISLAND"
 const underName = "ROLE<b>PLAY</b>"
-const desc = "FiveM Roleplay server featuring an extensive collection of custom scripts, maps, vehicles, unique weapons, and much more."
+const desc = "Free Island RP or FIRP is a vMenu server focused on serious roleplay. While maintaining a fun and friendly environment, we strive to create a unique experience for our players. We are a community that values quality roleplay and we are always looking for new members to join us on our journey. We have a wide variety of jobs, activities, and events for our players to enjoy. Whether you're a seasoned roleplayer or new to the scene, Free Island RP has something for everyone. Join us today and become a part of our growing community!"
 
 
 // Social media
-const discord = "https://discord.gg/NeveraDev/tw28AqrgWU"  // If = "" then icon will not show up on screen
+const discord = "https://discord.gg/2ADyyJbA5K"  // If = "" then icon will not show up on screen
 const instagram = ""	// https://example.com
 const youtube = "" 		// https://example.com
 const twitter = "" 		// https://example.com
@@ -88,6 +98,12 @@ const tiktok = ""  		// https://example.com
 const facebook = ""		// https://example.com
 const twitch = "" 		// https://example.com
 const github = "" 		// https://example.com
+
+
+// Music credit (bottom right corner)
+const musicCreditText = "Music by"		// If = "" then the credit will not show up on screen
+const musicCreditName = "Synetics"		// The linked part of the credit
+const musicCreditLink = "https://synetics.bandcamp.com/album/the-hertzium-protocol"	// If = "" then the name is shown as plain text
 
 
 // Video Settings
@@ -103,7 +119,7 @@ const showYoutubeVideo = false
 const enableLocalVideo = false
 
 // Local audio
-const localAudio = false
+const localAudio = true
 
 
 
