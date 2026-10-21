@@ -328,6 +328,57 @@ img.logo {
   overflow: auto;
 }
 
+/* The left panel is sized by the screen's height, not its width: each list is
+   as tall as its rows until the panel runs out of room, and only then scrolls
+   (see the list auto-scroll in script.js). */
+.panel.left {
+  display: flex;
+  flex-direction: column;
+  max-height: 76vh;
+}
+
+.panel.left .staff-section,
+.panel.left .donator-section {
+  display: flex;
+  flex-direction: column;
+  flex: 0 1 auto;
+  min-height: 0;
+}
+
+.panel.left h3,
+.panel.left .staff {
+  flex-shrink: 0;
+}
+
+.panel.left .list {
+  height: auto;
+  min-height: 0;
+}
+
+/* Sharing the panel: the staff team keeps at most this much, donators get
+   whatever is left. */
+.panel.has-donators .staff-section {
+  flex-shrink: 0;
+  max-height: 34vh;
+}
+
+.panel.has-donators .staff-section + .donator-section {
+  margin-top: 1vw;
+}
+
+/* A soft edge wherever there are more rows to scroll to. */
+.panel.left .list.fade-top {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 2vw);
+}
+
+.panel.left .list.fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, #000 calc(100% - 2vw), transparent);
+}
+
+.panel.left .list.fade-top.fade-bottom {
+  -webkit-mask-image: linear-gradient(to bottom, transparent, #000 2vw, #000 calc(100% - 2vw), transparent);
+}
+
 ::-webkit-scrollbar {
   width: 0px;
 }

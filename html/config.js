@@ -69,6 +69,11 @@ const tipsConfig = [
 const showStaffTeam = true
 const showTipList = true
 
+// Donators (under the staff team). The list itself comes from Discord roles —
+// see Config.Donators in config.lua. Nothing is shown until that list arrives.
+const showDonators = true
+const donatorsTitle = "Donators"
+
 
 // orange
 // red
@@ -120,6 +125,37 @@ const enableLocalVideo = false
 
 // Local audio
 const localAudio = true
+
+// The files in the "html/audio" folder to play. The page cannot look inside the
+// folder by itself, so every file has to be listed here.
+// "name" and "link" are that track's music credit; leave them out to use the
+// musicCreditName / musicCreditLink above.
+// With more than one track, skip buttons appear next to the pause button.
+const localTracks = [
+	{ file: "audio.mp3", name: "Synetics", link: "https://synetics.bandcamp.com/album/the-hertzium-protocol" },
+	// { file: "another-song.mp3", name: "Artist", link: "https://example.com" },
+]
+const shuffleLocalTracks = true		// true: a random order on each join, false: the order above
+
+// Staff / donator lists too long for the screen scroll by themselves.
+// Rows per second; 0 turns the automatic scrolling off (the mouse wheel still works).
+const listScrollSpeed = 0.4
+
+// Starting volume, 0 - 100
+const defaultVolume = 25
+
+// Radio
+// If radioEnabled is true, the loading screen plays the radio stream instead of
+// "audio.mp3", and the music credit shows the artist currently on air.
+// With localAudio also true, a button next to the volume slider switches between
+// the two, and "audio.mp3" takes over by itself if the stream cannot be played.
+const radioEnabled = true
+// With radioEnabled and localAudio both true: true picks the radio or "audio.mp3"
+// at random (50/50) on each join, false always starts on the radio.
+const randomAudioSource = true
+const radioName = "OOC Radio"						// Shown as the credit until the artist is known
+const radioLink = "https://oocradio.com"			// Where the credit links to while the radio is playing
+const radioStreamUrl = "https://radio.oocradio.com/"
 
 
 

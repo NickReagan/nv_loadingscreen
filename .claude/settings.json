@@ -1,0 +1,29 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(cd \"c:/Users/admin/Documents/GitHub\" && ls; ls firp_website 2>/dev/null | head -50; ls \"C:/Users/admin/.claude/projects/c--Users-admin-Documents-GitHub-nv-loadingscreen/memory/\" 2>/dev/null)",
+      "Read(//c/Users/admin/Documents/GitHub/**)",
+      "Read(//c/Users/admin/.claude/projects/c--Users-admin-Documents-GitHub-nv-loadingscreen/memory/**)",
+      "Read(//c/Users/admin/Documents/GitHub/FIRP-Website/fivem/firp_website/**)",
+      "Bash(cd \"c:/Users/admin/Documents/GitHub\" && ls FIRP-Website/fivem/firp_website FIRP-Website/fivem/firp_website/server && grep -rniE \"ooc ?radio|oocradio\" --include=*.lua --include=*.js --include=*.ts --include=*.tsx --include=*.md --include=*.json --include=*.html --include=*.cfg -l . --exclude-dir=node_modules --exclude-dir=.git 2>/dev/null | head -20)",
+      "Read(//c/Users/admin/Documents/GitHub/FIRP-Website/server/shared/**)",
+      "Read(//c/Users/admin/Documents/GitHub/FIRP-Website/server/routes/**)",
+      "Read(//c/Users/admin/Documents/GitHub/FIRP-Website/frontend/src/radio/**)",
+      "Read(//c/Users/admin/Documents/GitHub/FIRP-Website/fivem/firp_website/server/**)",
+      "Bash(cd \"c:/Users/admin/Documents/GitHub/FIRP-Website\" && grep -rniE \"donat|supporter|booster|patreon\" --include=*.js --include=*.jsx --include=*.lua --include=*.sql -l . --exclude-dir=node_modules --exclude-dir=public --exclude-dir=.git | head -20; grep -rn \"public/staff/roster\\\\|/api/public\" server/index.js server/routes/*.js | head -20; cat fivem/firp_website/server/api.lua | head -80)",
+      "Read(//c/Users/admin/Documents/GitHub/FIRP-Website/**)",
+      "Bash(cd \"c:/Users/admin/Documents/GitHub/FIRP-Website\" && grep -n \"buildRadioRouter\\\\|buildStaffRouter\\\\|cors\\\\|allowAnyOrigin\" server/index.js | head -20; grep -n \"allowAnyOrigin\" -A8 server/routes/staff.js | head -30; grep -n \"SiteUrl\\\\|RequestTimeoutMs\" fivem/firp_website/config.lua)",
+      "Bash(lua -v)",
+      "Bash(luac -p config.lua server.lua client.lua)",
+      "Bash(lua \"C:/Users/admin/AppData/Local/Temp/claude/c--Users-admin-Documents-GitHub-nv-loadingscreen/3c4081b0-534f-4792-a8ac-fd7999683d99/scratchpad/mock.lua\")",
+      "Bash(luac -p server.lua)",
+      "Bash(node --check html/assets/js/script.js)",
+      "Bash(node --check html/config.js)",
+      "Bash(git diff *)",
+      "Read(//c/Users/admin/Documents/GitHub/FIRP-Website/fivem/**)",
+      "Bash(/c/Users/admin/AppData/Local/Programs/Lua/bin/luac -p server.lua fxmanifest.lua)",
+      "Bash(git add *)",
+      "Bash(git commit *)"
+    ]
+  }
+}

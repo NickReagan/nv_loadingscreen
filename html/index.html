@@ -26,10 +26,13 @@
 	<div class="winter"></div>
 	<div class="mini-buttons">
 		<button onclick="toggleMute(this)"><i class="bi bi-volume-up"></i></button>
+		<button class="track-skip" onclick="skipTrack(-1)" style="display:none;"><i class="bi bi-skip-start"></i></button>
 		<button onclick="togglePause(this)"><i class="bi bi-pause"></i></button>
+		<button class="track-skip" onclick="skipTrack(1)" style="display:none;"><i class="bi bi-skip-end"></i></button>
+		<button class="radio-toggle" onclick="toggleRadio()" style="display:none;"><i class="bi bi-broadcast"></i></button>
 		<div class="inpt">
-			<input type="range" min="0" max="100" step="1" value="100" class="volume-slider" oninput="setVolume(this.value)">
-			<span>100%</span>
+			<input type="range" min="0" max="100" step="1" value="25" class="volume-slider" oninput="setVolume(this.value)">
+			<span>25%</span>
 		</div>
 	</div>
 
@@ -42,8 +45,14 @@
 	<iframe allow="autoplay; encrypted-media" id="youtube-video"></iframe>
 
 	<div class="panel left staffteam" style="display:none;">
-		<h3>Staff Team</h3>
-		<div class="list staff_team"></div>
+		<div class="staff-section" style="display:none;">
+			<h3>Staff Team</h3>
+			<div class="list staff_team"></div>
+		</div>
+		<div class="donator-section" style="display:none;">
+			<h3>Donators</h3>
+			<div class="list donators"></div>
+		</div>
 	</div>
 
 	<div class="panel right panelInfo" style="display:none;">

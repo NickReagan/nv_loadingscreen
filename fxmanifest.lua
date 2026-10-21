@@ -14,12 +14,14 @@ shared_script "config.lua"
 client_script "client.lua"
 server_script "server.lua"
 
--- The staff roster comes from firp_website's server-side exports.
--- Set Config.UseWebsiteRoster = false and remove this line to run standalone.
-dependency 'firp_website'
+-- The staff roster comes from firp_website's server-side exports, but it is
+-- deliberately NOT a `dependency`: FXServer stops every dependent resource when
+-- its dependency stops, and does not start it again — so each restart of
+-- firp_website would silently take the loading screen down with it. server.lua
+-- checks at runtime whether firp_website is running instead.
 
 files {
-    'html/audio.mp3',
+    'html/audio/**',
     'html/video.webm',
     'html/index.html',
     'html/config.js',
